@@ -1,4 +1,4 @@
-package com.quiz.impl;
+package com.quiz.services.impl;
 
 import java.util.List;
 import java.util.stream.Collector;
@@ -14,6 +14,7 @@ import com.quiz.services.QuizServices;
 
 @Service
 public class QuizServiceImpl implements QuizServices {
+
     private QuizRepository repo;
     private QuestionClient questionClient;
 

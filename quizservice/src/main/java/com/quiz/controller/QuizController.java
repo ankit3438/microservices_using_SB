@@ -11,14 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.quiz.entities.Quiz;
-import com.quiz.impl.QuizServiceImpl;
+import com.quiz.services.impl.QuizServiceImpl;
 
 @RestController
 @RequestMapping("/quiz")
 public class QuizController {
 
-    @Autowired
     private QuizServiceImpl quizServiceImpl;
+
+    public QuizController(QuizServiceImpl quizServiceImpl){
+        this.quizServiceImpl=quizServiceImpl;
+    }
 
     @PostMapping
     public Quiz create(@RequestBody Quiz quiz){
